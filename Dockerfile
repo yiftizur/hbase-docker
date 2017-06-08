@@ -9,7 +9,6 @@ RUN ln -s /opt/hbase-0.94.22 /opt/hbase
 RUN /opt/hbase/bin/hbase-config.sh
 
 ADD hbase-site.xml /opt/hbase/conf/hbase-site.xml
-ADD create_tables.txt /create_tables.txt
 ADD start-hbase.sh /opt/hbase/bin/start-hbase.sh
 
 # HBase Master API port
