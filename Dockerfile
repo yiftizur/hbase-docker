@@ -1,11 +1,11 @@
-FROM java:7-jdk-alpine
+FROM java:8-jdk-alpine
 
 RUN apk add --no-cache wget
 RUN apk add --no-cache bash
 
 RUN mkdir /opt
-RUN wget -q http://archive.apache.org/dist/hbase/hbase-0.94.22/hbase-0.94.22.tar.gz -O /opt/hbase-0.94.22.tar.gz && cd /opt && tar xfvz hbase-0.94.22.tar.gz && rm hbase-0.94.22.tar.gz
-RUN ln -s /opt/hbase-0.94.22 /opt/hbase
+RUN wget -q http://archive.apache.org/dist/hbase/1.2.4/hbase-1.2.4-bin.tar.gz -O /opt/hbase-1.2.4-bin.tar.gz && cd /opt && tar xfvz hbase-1.2.4-bin.tar.gz && rm hbase-1.2.4-bin.tar.gz
+RUN ln -s /opt/hbase-1.2.4 /opt/hbase
 RUN /opt/hbase/bin/hbase-config.sh
 
 ADD hbase-site.xml /opt/hbase/conf/hbase-site.xml
